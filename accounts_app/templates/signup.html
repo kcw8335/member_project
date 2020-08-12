@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>signup.html 입니다.</h1>
+    <a href="{% url 'home' %}">home으로 이동하기</a><br><br>
+    <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        username :
+        <input type="text" name="ID" value="{{ID}}" autofocus="autofocus" required="required"><br>
+        password :
+        <input type="password" name="PW1" required="required"><br>
+        password 확인 :
+        <input type="password" name="PW2" required="required"><br>
+        <input type="submit" value="회원가입하기">
+    </form>
+    {{error}}
+</body>
+</html>

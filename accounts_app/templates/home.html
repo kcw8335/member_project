@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>home.html 입니다.</h1>
+    {% if user.username %}
+        <p>{{user.username}}님 환영합니다.</p>
+        <a href="{% url 'logout' %}">logout 하기</a>
+    {% else %}
+        <a href="{% url 'login' %}">login page로 이동하기</a>
+        <br><br>
+        <a href="{% url 'signup' %}">signup page로 이동하기</a>
+    {% endif %}
+</body>
+</html>
